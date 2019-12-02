@@ -1,13 +1,13 @@
-import compose from './compose'
+import compose from './compose';
 
 function f() {
-  console.log('', arguments)
+  console.log('', arguments);
 }
 
-f()
+f();
 
-f(1, 2, 3)
+f(1, 2, 3);
 
-f('sdf')
+f('sdf');
 
-f([1, 2])
+f([1, 2]);
