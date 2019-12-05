@@ -59,6 +59,7 @@ export default function createStore(reducer, preloadedState, enhancer) {
       isDispatching = false;
     }
 
+    // 这里为什么要重新赋值 currentListeners ？
     const listeners = (currentListeners = nextListeners);
     for (let i = 0; i < listeners.length; i++) {
       const listener = listeners[i];
@@ -70,7 +71,7 @@ export default function createStore(reducer, preloadedState, enhancer) {
 
   // 替换reducer，以下情况可能会用到：
   // 1. 实现代码分割
-  // 2. 动态加载 reducer 
+  // 2. 动态加载 reducer
   // 3. 实现热重载
   function replaceReducer(nextReducer) {
     currentReducer = nextReducer;
